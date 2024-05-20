@@ -1,0 +1,222 @@
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: none;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 0.88rem;
+    background-color: rgba(30, 30, 30, 1);
+    user-select: none;
+    overflow-x: hidden;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: rgb(254, 148, 25);
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header #menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+header #menu-btn.close {
+    transform: rotate(180deg);
+}
+
+header #menu-btn.close i {
+    content: '\f00d'; /* FontAwesome Unicode for 'fa-times' icon */
+}
+
+.container {
+    display: grid;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 4rem; /* To avoid overlap with header */
+    background: rgba(30, 30, 30, 1);
+    gap: 1.8rem;
+    grid-template-columns: 14rem auto;
+}
+
+a {
+    color: black;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+h3 {
+    font-size: 0.87rem;
+}
+
+small {
+    font-size: 0.76rem;
+}
+
+.profile-picture {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.text-muted {
+    color: rgb(81, 78, 78);
+}
+
+aside {
+    height: calc(100vh - 4rem);
+    width: 14rem;
+    background:  rgb(254, 148, 25);
+    position: absolute;
+    top: 4rem;
+    left: -14rem;
+    transition: left 0.3s ease;
+}
+
+aside.active {
+    left: 0;
+}
+
+aside .top {
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem;
+}
+
+aside .close {
+    display: none;
+}
+
+.sidebar {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 6rem);
+    position: relative;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    color: black;
+    text-decoration: none;
+}
+
+.sidebar h3 {
+    font-weight: 500;
+    font-size: large;
+}
+
+aside .sidebar a {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+    height: 3.7rem;
+    transition: all 300ms ease;
+}
+
+.sidebar a i {
+    margin-right: 1rem;
+}
+
+
+.right {
+    margin-top: 1.4rem;
+}
+
+.right .top {
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+
+.right .top button {
+    display: none;
+}
+
+
+
+/* Existing styles */
+
+aside .sidebar a:hover {
+    background: rgba(246, 182, 86, 0.429); /* Highlighted background color */
+    color: rgba(0, 0, 0, 0.429); /* Change text color */
+}
+
+aside .sidebar a:hover::before {
+    content: "";
+    width: 6px;
+    height: 100%;
+    background: black; /* Vertical line */
+}
+
+aside .sidebar a:hover i {
+    margin-left: calc(1rem - 3px);
+    transition: all 300ms ease;
+}
+
+aside {
+    height: calc(100vh - 4rem);
+    width: 14rem;
+    background: rgba(255, 122, 0, 0.8);
+    position: fixed;
+    top: 4rem;
+    left: -14rem;
+    transition: left 0.3s ease; /* Slide-in animation for sidebar */
+}
+
+.sidebar {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 6rem);
+    position: relative;
+    transition: transform 0.3s ease; /* Slide-in animation for menu items */
+    transform: translateX(-100%); /* Initially hidden off the screen */
+}
+
+/* New styles for when the sidebar is active */
+aside.active {
+    left: 0;
+}
+
+aside.active .sidebar {
+    transform: translateX(0); /* Slide-in the menu items */
+}
+
